@@ -21,6 +21,11 @@ public class HelloController implements Observer {
 
     @FXML
     private ImageView planeta1;
+    @FXML
+    private ImageView imagen2;
+
+    @FXML
+    private ImageView imagen3;
 
     @FXML
     private Button btnAbajo;
@@ -71,11 +76,9 @@ public class HelloController implements Observer {
 
     @FXML
     void btnIniciarOnMause(MouseEvent event) {
-        planeta1 = new ImageView(new Image(getClass().getResourceAsStream("/assets/imgs/tierra.gif")));
+        planeta1 = new ImageView(new Image(getClass().getResourceAsStream("/assets/imgs/neptune3.sp.jpg")));
         planeta1.setFitHeight(57);
         planeta1.setFitWidth(60);
-        planeta1.setLayoutX(0);
-        planeta1.setLayoutY(0);
         rootScene.getChildren().addAll(planeta1);
         //Genera los obstaculos
         pos[0] = new ObjetosGalaxia();
@@ -84,6 +87,19 @@ public class HelloController implements Observer {
         Thread hilo2 = new Thread(pos[0]);
         hilo2.start();
         System.out.println(Thread.currentThread().getName());
+
+        imagen2 = new ImageView(new Image(getClass().getResourceAsStream("/assets/imgs/pia00271_detail.jpg")));
+        imagen2.setFitHeight(67);
+        imagen2.setFitWidth(80);
+        rootScene.getChildren().addAll(imagen2);
+        //Genera los obstaculos
+        pos[1] = new ObjetosGalaxia();
+        pos[1].setObjetosPos(new Objetos(2, 0, 0));
+        pos[1].addObserver(this);
+        Thread hilo3 = new Thread(pos[1]);
+        hilo3.start();
+        System.out.println(Thread.currentThread().getName());
+
 
         //Incia el hilo del cohete
         jugador = new Jugador();
@@ -125,6 +141,11 @@ public class HelloController implements Observer {
                     planeta1.setLayoutY(ObP.getY());
                     planeta1.setLayoutX((ObP.getX()));
                     break;
+                case 2:
+                    imagen2.setLayoutY(ObP.getY());
+                    imagen2.setLayoutX((ObP.getX()));
+                    break;
+
             }
         }
     }
