@@ -38,19 +38,19 @@ public class Jugador extends Observable implements Runnable {
             setChanged();
             notifyObservers(pos);
             try {
-                Thread.sleep(50L);
+                Thread.sleep(40L);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
             if(left == true){
                 if(pos.getX() >= 0){
-                    pos.setX(pos.getX() - 30);
+                    pos.setX(pos.getX() - 20);
                 }
                 left = false;
             }
             else if (right == true){
                 if (pos.getX() <= 640){
-                    pos.setX(pos.getX() + 30);
+                    pos.setX(pos.getX() + 20);
                 }
                 right=false;
             }

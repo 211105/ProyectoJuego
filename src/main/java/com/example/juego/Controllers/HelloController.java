@@ -25,15 +25,6 @@ public class HelloController implements Observer {
     private ImageView imagen2;
 
     @FXML
-    private ImageView imagen3;
-
-    @FXML
-    private Button btnAbajo;
-
-    @FXML
-    private Button btnArriba;
-
-    @FXML
     private Button btnDerecha;
 
     @FXML

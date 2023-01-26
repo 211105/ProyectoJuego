@@ -12,12 +12,10 @@
             <Image url="@../../../assets/imgs/Fondo.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btnIniciar" layoutX="493.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnIniciarOnMause" text="Inciar" />
-      <Button fx:id="btnSalir" layoutX="547.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnSalirOnMause" text="Salir" />
-      <Button fx:id="btnAbajo" layoutX="41.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnAbajoOnMause" text="↓" />
-      <Button fx:id="btnIzquierda" layoutX="14.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#btnIzquierdaOnMause" text="←" />
-      <Button fx:id="btnArriba" layoutX="41.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#btnArribaOnMause" text="↑" />
-      <Button fx:id="btnDerecha" layoutX="62.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#btnDerechaOnMause" text="→" />
+      <Button fx:id="btnIniciar" layoutX="493.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnIniciarOnMause" text="Inciar" textFill="RED" />
+      <Button fx:id="btnSalir" layoutX="547.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnSalirOnMause" text="Salir" textFill="#ff0fe7" />
+      <Button fx:id="btnIzquierda" graphicTextGap="6.0" layoutX="263.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnIzquierdaOnMause" text="←" textAlignment="CENTER" textFill="#eb0909" />
+      <Button fx:id="btnDerecha" layoutX="319.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnDerechaOnMause" text="→" textFill="#f20a0a" />
       <ImageView fx:id="Cohete" fitHeight="49.0" fitWidth="67.0" layoutX="276.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/d271d6f8a93c1f6120ee9924a53f460c.gif" />
@@ -32,6 +30,5 @@
             <Image url="@../../../assets/Solo.gif" />
          </image>
       </ImageView>
-      <Button fx:id="btnPreparar" layoutX="528.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#btnPrepararOnMause" text="Prepara" />
    </children>
 </AnchorPane>

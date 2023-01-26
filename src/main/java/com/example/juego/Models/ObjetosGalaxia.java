@@ -22,7 +22,7 @@ public class ObjetosGalaxia extends Observable implements Runnable {
 
         while (status){
 
-            objetosPos.setY((objetosPos.getY() + 4));
+            objetosPos.setY((objetosPos.getY() + 2));
             setChanged();
             notifyObservers(objetosPos);
 
@@ -31,7 +31,7 @@ public class ObjetosGalaxia extends Observable implements Runnable {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            if (objetosPos.getY() >=450){
+            if (objetosPos.getY() >=331){
                 numero = (int)(Math.random()*640+1);
                 objetosPos.setY(0);
                 objetosPos.setX(numero);
