@@ -3,35 +3,56 @@ package com.example.juego.Models;
 import java.util.Observable;
 
 public class Jugador extends Observable implements Runnable {
-    private int distancia =10;
-    private Nave pos;// posicion de la nave
+    private Nave pos;
+    private boolean status,left=false,right=false;
 
-    private Boolean status;
-
-    public Jugador(){
-        status= true;
-    }
-    public void setPosicion(Nave pos){this.pos= pos;}
-
-    @Override
-    public void run() {
-        while (status){
-            pos.setX(pos.getX()+  distancia);
-            setChanged();
-            notifyObservers(pos);
-            try {
-                Thread.sleep(50L);
-            } catch (InterruptedException e){
-                throw new RuntimeException(e);
-            }
-            if(pos.getX() >=590)
-                distancia *= -1;
-            if(pos.getX() <14)
-                distancia *= -1;
-        }
+    public void setPos(Nave pos) {
+        this.pos = pos;
     }
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public void setLeft(boolean left) {
+        this.left = left;
+    }
+
+    public void setRight(boolean right) {
+        this.right = right;
+    }
+
+    public void setRightChange(){pos.setX(pos.getX() + 0);}
+    public void setLeftChange(){pos.setX(pos.getX() + 0);}
+    public Jugador(){
+        status = true;
+    }
+
+    @Override
+    public void run() {
+        while (status){
+            setChanged();
+            notifyObservers(pos);
+            try {
+                Thread.sleep(50L);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            if(left == true){
+                if(pos.getX() >= 0){
+                    pos.setX(pos.getX() - 10);
+                    System.out.println("Derecha");
+
+                }
+                left = false;
+            }
+            else if (right == true){
+                if (pos.getX() <= 640){
+                    pos.setX(pos.getX() + 10);
+                    System.out.println("Izquierda");
+                }
+                right=false;
+            }
+        }
     }
 }

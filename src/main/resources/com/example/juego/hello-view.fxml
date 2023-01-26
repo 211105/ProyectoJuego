@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane fx:id="rootScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.juego.Controllers.HelloController">
    <children>
-      <Button fx:id="btnPreparar" layoutX="22.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#btnPrepararOnMause" text="Preparar" />
-      <Button fx:id="btnIniciar" layoutX="94.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#btnIniciarOnMause" text="Inciar" />
-      <Button fx:id="btnSalir" layoutX="153.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#btnSalirOnMause" text="Salir" />
+      <Button fx:id="btnPreparar" layoutX="423.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnPrepararOnMause" text="Preparar" />
+      <Button fx:id="btnIniciar" layoutX="493.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnIniciarOnMause" text="Inciar" />
+      <Button fx:id="btnSalir" layoutX="547.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnSalirOnMause" text="Salir" />
+      <Button fx:id="btnAbajo" layoutX="41.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnAbajoOnMause" text="↓" />
+      <Button fx:id="btnIzquierda" layoutX="14.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#btnIzquierdaOnMause" text="←" />
+      <Button fx:id="btnArriba" layoutX="41.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#btnArribaOnMause" text="↑" />
+      <Button fx:id="btnDerecha" layoutX="62.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#btnDerechaOnMause" text="→" />
+      <ImageView fx:id="Cohete" fitHeight="49.0" fitWidth="67.0" layoutX="276.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets.imgs/d271d6f8a93c1f6120ee9924a53f460c.gif" />
+         </image></ImageView>
    </children>
 </AnchorPane>
