@@ -22,8 +22,12 @@ public class Jugador extends Observable implements Runnable {
         this.right = right;
     }
 
-    public void setRightChange(){pos.setX(pos.getX() + 0);}
-    public void setLeftChange(){pos.setX(pos.getX() + 0);}
+    public void setRightChange(){
+        pos.setX(pos.getX() + 0);
+    }
+    public void setLeftChange(){
+        pos.setX(pos.getX() + 0);
+    }
     public Jugador(){
         status = true;
     }
@@ -41,15 +45,12 @@ public class Jugador extends Observable implements Runnable {
             if(left == true){
                 if(pos.getX() >= 0){
                     pos.setX(pos.getX() - 10);
-                    System.out.println("Derecha");
-
                 }
                 left = false;
             }
             else if (right == true){
                 if (pos.getX() <= 640){
                     pos.setX(pos.getX() + 10);
-                    System.out.println("Izquierda");
                 }
                 right=false;
             }

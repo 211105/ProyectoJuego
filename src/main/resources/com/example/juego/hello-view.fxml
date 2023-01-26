@@ -7,7 +7,11 @@
 
 <AnchorPane fx:id="rootScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.juego.Controllers.HelloController">
    <children>
-      <Button fx:id="btnPreparar" layoutX="423.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnPrepararOnMause" text="Preparar" />
+      <ImageView fitHeight="440.0" fitWidth="808.0" layoutX="-97.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets.imgs/Fondo.jpg" />
+         </image>
+      </ImageView>
       <Button fx:id="btnIniciar" layoutX="493.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnIniciarOnMause" text="Inciar" />
       <Button fx:id="btnSalir" layoutX="547.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnSalirOnMause" text="Salir" />
       <Button fx:id="btnAbajo" layoutX="41.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnAbajoOnMause" text="↓" />
