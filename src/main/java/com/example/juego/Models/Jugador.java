@@ -44,13 +44,13 @@ public class Jugador extends Observable implements Runnable {
             }
             if(left == true){
                 if(pos.getX() >= 0){
-                    pos.setX(pos.getX() - 10);
+                    pos.setX(pos.getX() - 30);
                 }
                 left = false;
             }
             else if (right == true){
                 if (pos.getX() <= 640){
-                    pos.setX(pos.getX() + 10);
+                    pos.setX(pos.getX() + 30);
                 }
                 right=false;
             }

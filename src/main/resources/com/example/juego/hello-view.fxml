@@ -9,7 +9,7 @@
    <children>
       <ImageView fitHeight="440.0" fitWidth="808.0" layoutX="-97.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@assets.imgs/Fondo.jpg" />
+            <Image url="@../../../assets/imgs/Fondo.jpg" />
          </image>
       </ImageView>
       <Button fx:id="btnIniciar" layoutX="493.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#btnIniciarOnMause" text="Inciar" />
@@ -20,7 +20,18 @@
       <Button fx:id="btnDerecha" layoutX="62.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#btnDerechaOnMause" text="→" />
       <ImageView fx:id="Cohete" fitHeight="49.0" fitWidth="67.0" layoutX="276.0" layoutY="256.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@assets.imgs/d271d6f8a93c1f6120ee9924a53f460c.gif" />
+            <Image url="@../../../assets/d271d6f8a93c1f6120ee9924a53f460c.gif" />
          </image></ImageView>
+      <ImageView fitHeight="108.0" fitWidth="82.0" layoutX="22.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/galaxia1.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="58.0" fitWidth="49.0" layoutX="542.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/Solo.gif" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnPreparar" layoutX="528.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#btnPrepararOnMause" text="Prepara" />
    </children>
 </AnchorPane>
