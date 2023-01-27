@@ -124,17 +124,27 @@ public class HelloController implements Observer {
             Objetos ObP = (Objetos) arg;
             switch (ObP.getId()){
                 case 1:
-
                     Platform.runLater(() -> planeta1.setLayoutY(ObP.getY()));
                     Platform.runLater(() -> planeta1.setLayoutX(ObP.getX()));
+                    if (planeta1.getBoundsInParent().intersects(Cohete.getBoundsInParent())) {
+                        //pos[1].setStatus(false);
+                        jugador.setStatus(false);
+                        pos[0].setStatus(false);
+                    }
                     break;
                 case 2:
                     Platform.runLater(() -> imagen2.setLayoutY(ObP.getY()));
                     Platform.runLater(() -> imagen2.setLayoutX(ObP.getX()));
+                    if (imagen2.getBoundsInParent().intersects(Cohete.getBoundsInParent())) {
+                        pos[1].setStatus(false);
+                        jugador.setStatus(false);
+                        //pos[0].setStatus(false);
+                    }
                     break;
 
             }
-        } if (planeta1.getBoundsInParent().intersects(Cohete.getBoundsInParent())) {
+        }
+        if (planeta1.getBoundsInParent().intersects(Cohete.getBoundsInParent())) {
             pos[1].setStatus(false);
             jugador.setStatus(false);
             pos[0].setStatus(false);
