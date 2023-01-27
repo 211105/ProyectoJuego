@@ -4,6 +4,7 @@ import com.example.juego.Models.Jugador;
 import com.example.juego.Models.Nave;
 import com.example.juego.Models.Objetos;
 import com.example.juego.Models.ObjetosGalaxia;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -11,11 +12,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Line;
 
 import java.util.Observable;
 import java.util.Observer;
 
 public class HelloController implements Observer {
+    private Line line;
     @FXML
     private ImageView Cohete;
 
@@ -48,15 +51,6 @@ public class HelloController implements Observer {
 
     private ObjetosGalaxia [] pos = new ObjetosGalaxia[7];
 
-    @FXML
-    void btnAbajoOnMause(MouseEvent event) {
-
-    }
-
-    @FXML
-    void btnArribaOnMause(MouseEvent event) {
-
-    }
 
     @FXML
     void btnDerechaOnMause(MouseEvent event) {
@@ -89,6 +83,7 @@ public class HelloController implements Observer {
         pos[1].addObserver(this);
         Thread hilo3 = new Thread(pos[1]);
         hilo3.start();
+        System.out.println("Holitasss" + hilo3);
         System.out.println(Thread.currentThread().getName());
 
 
@@ -129,15 +124,23 @@ public class HelloController implements Observer {
             Objetos ObP = (Objetos) arg;
             switch (ObP.getId()){
                 case 1:
-                    planeta1.setLayoutY(ObP.getY());
-                    planeta1.setLayoutX((ObP.getX()));
+
+                    Platform.runLater(() -> planeta1.setLayoutY(ObP.getY()));
+                    Platform.runLater(() -> planeta1.setLayoutX(ObP.getX()));
                     break;
                 case 2:
-                    imagen2.setLayoutY(ObP.getY());
-                    imagen2.setLayoutX((ObP.getX()));
+                    Platform.runLater(() -> imagen2.setLayoutY(ObP.getY()));
+                    Platform.runLater(() -> imagen2.setLayoutX(ObP.getX()));
                     break;
 
             }
+        } if (planeta1.getBoundsInParent().intersects(Cohete.getBoundsInParent())) {
+            pos[1].setStatus(false);
+            jugador.setStatus(false);
+            pos[0].setStatus(false);
         }
+
+
+
     }
 }
